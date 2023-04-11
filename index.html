@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./assets/images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="assets/style/main.css" />
+
+		<title>Frontend Mentor | Age calculator app</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<div class="card__input" id="allInputs">
+				<div class="form-column">
+					<label for="day">Day</label>
+					<input
+						type="number"
+						id="day"
+						name="day"
+						min="1"
+						max="31"
+						placeholder="DD"
+					/>
+				</div>
+				<div class="form-column">
+					<label for="month">Month</label>
+					<input
+						type="number"
+						id="month"
+						name="month"
+						min="1"
+						max="12"
+						placeholder="MM"
+					/>
+				</div>
+				<div class="form-column">
+					<label for="year">Year</label>
+					<input
+						type="number"
+						id="year"
+						name="year"
+						min="1900"
+						max="2099"
+						placeholder="YYYY"
+					/>
+				</div>
+			</div>
+			<div class="lineAndBtn">
+				<div class="hrContainer">
+				  <hr />
+				</div>
+				<div class="mySvg">
+				  <img src="assets/images/icon-arrow.svg" alt="" />
+				</div>
+			  </div>
+
+			<div class="card__result">
+				<p><span id="result-year">--</span> years</p>
+				<p><span id="result-month">--</span> months</p>
+				<p><span id="result-day">--</span> days</p>
+			</div>
+		</div>
+
+		<div class="attribution">
+			Challenge by
+			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+				>Frontend Mentor</a
+			>. Coded by <a href="#">leiju91</a>.
+		</div>
+		<script src="assets/style/function.js"></script>
+	</body>
+</html>

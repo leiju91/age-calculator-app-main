@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Poppins:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap");
+
+:root {
+	--colorOne: hsl(259, 100%, 65%);
+	--colorTwo: hsl(0, 100%, 67%);
+	--white: hsl(0, 0%, 100%);
+	--offWhite: hsl(0, 0%, 94%);
+	--lightGrey: hsl(0, 0%, 86%);
+	--smokeyGrey: hsl(0, 1%, 44%);
+	--offBlack: hsl(0, 0%, 8%);
+	--fontSizeBig: 32px;
+	--myFont: Poppins;
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: var(--lightGrey);
+	font-family: var(--myFont);
+	font-size: var(--fontSizeBig);
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+hr {
+	height: 1px;
+	background-color: var(--lightGrey);
+	border: none;
+	margin: 60px 5px 20px 0;
+}
+
+.card {
+	padding: 40px;
+	width: 700px;
+	height: 550px;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: var(--white);
+	border-radius: 20px 20px 180px 20px;
+}
+
+.card__input {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.card__input label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 15px;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--smokeyGrey);
+}
+
+.card__input .form-column input {
+	width: 100%;
+	color: var(--smokeyGrey);
+	font-size: 25px;
+	font-weight: 700;
+	padding: 10px;
+	border-radius: 10px;
+	border-color: var(--smokeyGrey);
+	border-width: 1px;
+}
+
+.mySvg {
+	background-color: var(--colorOne);
+	border-radius: 50%;
+	overflow: hidden;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	margin-left: auto;
+	cursor: pointer;
+}
+
+.card__input .form-column {
+	flex-basis: 30%;
+	padding: 0 10px;
+}
+
+.card__result {
+	font-size: 50px;
+	font-weight: 800;
+	font-style: italic;
+}
+
+.card__result span {
+	color: var(--colorOne);
+}
+
+.lineAndBtn {
+	display: flex; /* Utiliser un affichage en flex pour aligner les éléments */
+	align-items: center; /* Centrer verticalement les éléments dans le conteneur */
+	margin: 30px 0 10px 0;
+}
+
+.hrContainer {
+	flex-grow: 1;
+	position: relative; /* Ajouter un positionnement relatif pour permettre un positionnement absolu de la balise <hr> */
+}
+
+.hrContainer hr {
+	position: absolute; /* Utiliser un positionnement absolu pour aligner horizontalement la balise <hr> */
+	top: 50%; /* Aligner la balise <hr> à 50% de la hauteur du conteneur parent */
+	left: 0; /* Aligner la balise <hr> tout à gauche du conteneur parent */
+	right: 0; /* Aligner la balise <hr> tout à droite du conteneur parent */
+	transform: translateY(
+		-50%
+	); /* Décaler verticalement la balise <hr> de moitié de sa propre hauteur pour la centrer verticalement */
+	margin: 0; /* Réinitialiser les marges pour éviter les écarts */
+}
+
+.card__input .form-column input.error-border {
+	border-color: crimson;
+	color: crimson;
+}
