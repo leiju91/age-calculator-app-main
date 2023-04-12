@@ -4,7 +4,9 @@ let inputMonth = document.querySelector("#month");
 let inputYear = document.querySelector("#year");
 const btnOnClick = document.querySelector(".mySvg");
 let allInput = document.querySelectorAll("input");
+const currentYear = new Date().getFullYear();
 
+inputYear.max = currentYear;
 
 btnOnClick.addEventListener("click", function () {
 	const dayValue = inputDay.value;
@@ -14,14 +16,19 @@ btnOnClick.addEventListener("click", function () {
 	if (
 		!isNaN(dayValue) &&
 		dayValue.length > 0 &&
+		dayValue >= parseInt(inputDay.min) &&
+		dayValue <= parseInt(inputDay.max) &&
 		!isNaN(monthValue) &&
 		monthValue.length > 0 &&
+		monthValue >= parseInt(inputMonth.min) &&
+		monthValue <= parseInt(inputMonth.max) &&
 		!isNaN(yearValue) &&
-		yearValue.length > 0
+		yearValue.length > 0 &&
+		yearValue >= parseInt(inputYear.min) &&
+		yearValue <= parseInt(inputYear.max)
 	) {
 		let result = calcVeryDifficult(dayValue, monthValue, yearValue);
 
-		resetInput();
 		displayResult(result);
 
 		for (const input of allInput) {
@@ -31,6 +38,7 @@ btnOnClick.addEventListener("click", function () {
 		for (const input of allInput) {
 			input.classList.add("error-border");
 		}
+		resetInput();
 	}
 });
 
@@ -84,4 +92,11 @@ function displayResult(result) {
 	document.getElementById("result-year").innerHTML = result.ans;
 	document.getElementById("result-month").innerHTML = result.mois;
 	document.getElementById("result-day").innerHTML = result.jours;
+}
+
+function validateInputLength(input, maxLength) {
+	// Vérifier la longueur de la valeur de l'input
+	if (input.value.length > maxLength) {
+		input.value = input.value.slice(0, maxLength); // Limiter la valeur à maxLength caractères
+	}
 }

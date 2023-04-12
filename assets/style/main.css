@@ -126,3 +126,15 @@ hr {
 	border-color: crimson;
 	color: crimson;
 }
+
+@media (max-width: 767px) {
+	.card {
+		width: 100%;
+		height: auto; 
+		padding: 20px; 
+		border-radius: 20px; 
+		top: initial; 
+		left: initial; 
+		transform: none; 
+	}
+}
